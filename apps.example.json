@@ -1,0 +1,6 @@
+{
+  "example.com": {
+    "path": "/var/www/example.com/www/app",
+    "build_command": "npm run generate"
+  }
+}
