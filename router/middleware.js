@@ -13,7 +13,7 @@ const validateAuthHeader = (req, res, next) => {
     const accessToken = req.headers.access_token
 
     if (accessToken === undefined) {
-        return res.status(400).json({
+        return res.status(401).json({
             status: 'error',
             message: 'Missing access_token header',
             result: null,
@@ -21,7 +21,7 @@ const validateAuthHeader = (req, res, next) => {
     }
 
     if (accessToken !== process.env.ACCESS_TOKEN) {
-        return res.status(401).json({
+        return res.status(403).json({
             status: 'error',
             message: 'Invalid access_token',
             result: null
