@@ -10,7 +10,7 @@ const cors = (req, res, next) => {
 }
 
 const validateAuthHeader = (req, res, next) => {
-    const accessToken = req.headers.access_token
+    const accessToken = req.headers['x-access-token']
 
     if (accessToken === undefined) {
         return res.status(401).json({
